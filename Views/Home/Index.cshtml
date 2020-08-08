@@ -1,0 +1,12 @@
+﻿@model IEnumerable<YapılacaklarListesi.Models.Blog>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>INDEX</h2>
+
+@foreach (var i in Model)
+{
+<p>@i.Baslik</p>  
+}

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<YapılacaklarListesi.Models.Blog>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>To Do App List</h2>
+<hr />
+
+<p>
+    @Html.ActionLink("Create New List", "Create",null,new { @class="btn btn-primary"})
+</p>
+<hr>
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.KategoriAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sehir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Icerik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resim)
+        </th>
+
+
+        <th width="14%"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.KategoriAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Baslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sehir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Icerik)
+        </td>
+
+        <td>
+            <img class="img-responsive"src="" alt="">
+        </td>
+
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-xs" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+        </td>
+    </tr>
+}
+
+</table>
